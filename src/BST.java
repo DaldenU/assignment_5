@@ -1,8 +1,11 @@
+// Import of utils
 import java.util.List;
 import java.util.ArrayList;
 
 public class BST <K extends Comparable<K>, V>{
     private Node root;
+
+    // Node class representing a node in the binary search tree
     private class Node{
         private K key;
         private V val;
