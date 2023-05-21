@@ -111,4 +111,18 @@ public class BST <K extends Comparable<K>, V>{
         keys.add(node.key); // Add current node's key to the list
         inorderTraversal(node.right, keys); // Traverse right subtree
     }
+
+    // Returns the size (number of nodes) of the binary search tree
+    public int size() {
+        return size(root);
+    }
+
+    // Recursive helper method to calculate the size of the binary search tree
+    private int size(Node node) {
+        if (node == null) {
+            return 0;
+        } else {
+            return 1 + size(node.left) + size(node.right);
+        }
+    }
 }
