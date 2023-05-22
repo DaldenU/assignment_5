@@ -128,4 +128,27 @@ public class BST <K extends Comparable<K>, V>{
             return 1 + size(node.left) + size(node.right);
         }
     }
+
+    // Decides which is the height by finding maximum
+    public int height() {
+        return Math.max(height_left(root), height_right(root));
+    }
+
+    // finds the height by the left branch
+    private int height_left(Node node) {
+        if (node == null) {
+            return 0;
+        } else {
+            return 1 + height_left(node.left);
+        }
+    }
+
+    // finds the height by the right branch
+    private int height_right(Node node) {
+        if (node == null) {
+            return 0;
+        } else {
+            return 1 + height_right(node.right);
+        }
+    }
 }
